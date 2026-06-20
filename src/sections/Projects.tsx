@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { projects } from "@/data/portfolio";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
@@ -87,12 +87,12 @@ export default function Projects() {
 
                 {/* Links */}
                 <div className="flex items-center gap-4 mt-4">
-                  <a
-                    href={`/#/projeto/${project.id}`}
+                  <Link
+                    to={`/projeto/${project.id}`}
                     className="font-body text-xs font-medium text-accent-green hover:underline"
                   >
                     Ver Projeto &rarr;
-                  </a>
+                  </Link>
                   <a
                     href={project.githubUrl}
                     target="_blank"
